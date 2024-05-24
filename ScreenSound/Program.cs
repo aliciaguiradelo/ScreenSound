@@ -3,9 +3,18 @@
 
 using System;
 
-String mensagemBoasVindas = "Olá! Seja bem-vindo!";
+//Para declarar variável, usa camelCase
+//Para declarar funções, usa PascalCase
 
-Console.WriteLine(mensagemBoasVindas);
+void ExibirMensagemBoasVindas()
+{
+    String mensagemBoasVindas = "Olá! Seja bem-vindo!";
+    Console.WriteLine("************************************");
+    Console.WriteLine(mensagemBoasVindas);
+    Console.WriteLine("************************************");
+}
+
+
 
 //Criar uma variável chamada curso, e guarde nela o nome do curso estudado.
 String curso = "Curso C# e .NET";
