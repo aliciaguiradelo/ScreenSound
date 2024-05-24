@@ -49,9 +49,21 @@ void ExibirOpcoesMenu()
     Console.Write("\nDigite sua opção: ");
     string opcaoEscolhida = Console.ReadLine()!;
     int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
-    if (opcaoEscolhidaNumerica == 1)
+    switch (opcaoEscolhidaNumerica)
     {
-        Console.WriteLine("Você esclhoeu a opção " + opcaoEscolhidaNumerica);
+        case 1: Console.WriteLine("Você esclhoeu a opção " + opcaoEscolhidaNumerica);
+            break;
+        case 2: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+            break;
+        case 3: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+            break;
+        case 4: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+            break;
+        case 5: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+            break;
+        default: Console.WriteLine("Opção inválida.");
+            break;
+
     }
 }
 
