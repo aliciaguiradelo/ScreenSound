@@ -1,0 +1,14 @@
+C:\Alura\C#\ScreenSound\ScreenSound\bin\Debug\net7.0\ScreenSound.exe
+C:\Alura\C#\ScreenSound\ScreenSound\bin\Debug\net7.0\ScreenSound.deps.json
+C:\Alura\C#\ScreenSound\ScreenSound\bin\Debug\net7.0\ScreenSound.runtimeconfig.json
+C:\Alura\C#\ScreenSound\ScreenSound\bin\Debug\net7.0\ScreenSound.dll
+C:\Alura\C#\ScreenSound\ScreenSound\bin\Debug\net7.0\ScreenSound.pdb
+C:\Alura\C#\ScreenSound\ScreenSound\obj\Debug\net7.0\ScreenSound.GeneratedMSBuildEditorConfig.editorconfig
+C:\Alura\C#\ScreenSound\ScreenSound\obj\Debug\net7.0\ScreenSound.AssemblyInfoInputs.cache
+C:\Alura\C#\ScreenSound\ScreenSound\obj\Debug\net7.0\ScreenSound.AssemblyInfo.cs
+C:\Alura\C#\ScreenSound\ScreenSound\obj\Debug\net7.0\ScreenSound.csproj.CoreCompileInputs.cache
+C:\Alura\C#\ScreenSound\ScreenSound\obj\Debug\net7.0\ScreenSound.dll
+C:\Alura\C#\ScreenSound\ScreenSound\obj\Debug\net7.0\refint\ScreenSound.dll
+C:\Alura\C#\ScreenSound\ScreenSound\obj\Debug\net7.0\ScreenSound.pdb
+C:\Alura\C#\ScreenSound\ScreenSound\obj\Debug\net7.0\ScreenSound.genruntimeconfig.cache
+C:\Alura\C#\ScreenSound\ScreenSound\obj\Debug\net7.0\ref\ScreenSound.dll
