@@ -39,6 +39,23 @@ void Exercicio01()
     Console.WriteLine("Instrutor: " + instrutor);
 }
 
+void Exercicio02()
+{
+    //Criar uma variável chamada notaMedia e atribua um valor inteiro a ela.
+    //Caso seu valor seja maior ou igual a 5, escreva na tela "Nota suficiente para aprovação".
+    int notaMedia = 0;
+    if (notaMedia >= 5)
+    {
+        Console.WriteLine("nota suficiente para aprovação");
+    }
+    //Criar uma lista de linguagens de programação, com as linguagens C#, Java e JavaScript.
+
+    //Exibir o valor "C#" no console, utilizando a lista criada no exercício anterior.
+
+    //Criar um programa que, dado a entrada de dados de um número n inteiro, a partir do teclado,
+    //exibir a n - ésima posição de uma lista.
+}
+
 void ExibirOpcoesMenu()
 {
     Console.WriteLine("1. Cadastrar uma banda");
@@ -51,7 +68,9 @@ void ExibirOpcoesMenu()
     int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
     switch (opcaoEscolhidaNumerica)
     {
-        case 1: Console.WriteLine("Você esclhoeu a opção " + opcaoEscolhidaNumerica);
+        case 1:
+            RegistrarBandas();
+            Console.WriteLine("Você esclhoeu a opção " + opcaoEscolhidaNumerica);
             break;
         case 2: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
             break;
@@ -65,6 +84,17 @@ void ExibirOpcoesMenu()
             break;
 
     }
+}
+
+void RegistrarBandas()
+{
+    Console.Clear();
+    Console.WriteLine("Cadastrar banda");
+    Console.Write("Digite o nome da banda: ");
+    string nomeBanda = Console.ReadLine()!;
+    //Interpolação de string
+    Console.WriteLine($"A banda {nomeBanda} foi cadastrada com sucesso!");
+
 }
 
 ExibirMensagemBoasVindas();
