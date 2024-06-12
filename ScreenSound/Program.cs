@@ -6,6 +6,17 @@ using System;
 //Para declarar variável, usa camelCase
 //Para declarar funções, usa PascalCase
 
+//Instanciando uma lista já populada no escopo global.
+//List<string> listaDasBandas = new List<string> { "U2", "The Beatles", "Calypso" };
+
+//Vou substituir a lista pelo dicionário
+//Criando dicionário
+Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
+//Inserindo bandas no dicionário
+bandasRegistradas.Add("LinkPark", new List<int> { 10, 8, 6});
+bandasRegistradas.Add("Beatles", new List<int>());
+
+//Criando as funções
 void ExibirMensagemBoasVindas()
 {
     //O @ é um Verbatim literal que serve para mostrar a String exatamente como ela vai aprecer no console
@@ -58,6 +69,7 @@ void Exercicio02()
 
 void ExibirOpcoesMenu()
 {
+    ExibirMensagemBoasVindas();
     Console.WriteLine("1. Cadastrar uma banda");
     Console.WriteLine("2. Listar bandas");
     Console.WriteLine("3. Avaliar banda");
@@ -68,17 +80,15 @@ void ExibirOpcoesMenu()
     int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
     switch (opcaoEscolhidaNumerica)
     {
-        case 1:
-            RegistrarBandas();
-            Console.WriteLine("Você esclhoeu a opção " + opcaoEscolhidaNumerica);
+        case 1: RegistrarBandas();
             break;
-        case 2: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+        case 2: MostrarBandasRegistradas();
             break;
-        case 3: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+        case 3: AvaliarBanda();
             break;
         case 4: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
             break;
-        case 5: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+        case 5: Console.WriteLine("Fim!");
             break;
         default: Console.WriteLine("Opção inválida.");
             break;
@@ -89,13 +99,72 @@ void ExibirOpcoesMenu()
 void RegistrarBandas()
 {
     Console.Clear();
-    Console.WriteLine("Cadastrar banda");
+    ExibirTituloOpcoes("Cadastrar uma nova banda");
     Console.Write("Digite o nome da banda: ");
     string nomeBanda = Console.ReadLine()!;
+    //Inutilizei a lista listaDasBandas e substitui pelo dicionário bandasRegistradas
+    //listaDasBandas.Add(nomeBanda);
+    bandasRegistradas.Add(nomeBanda, new List<int>());
     //Interpolação de string
-    Console.WriteLine($"A banda {nomeBanda} foi cadastrada com sucesso!");
-
+    Console.WriteLine($"A banda {nomeBanda} foi cadastrada com sucesso!"); Thread.Sleep(2000);
+    Console.Clear();
+    ExibirOpcoesMenu();
 }
 
-ExibirMensagemBoasVindas();
+void MostrarBandasRegistradas()
+{
+    Console.Clear();
+    ExibirTituloOpcoes("Listando as bandas...");
+    //for (int i = 0; i < listaDasBandas.Count; i++)
+    //{
+    //Console.WriteLine($"Banda: {listaDasBandas[i]}");
+    //}
+    foreach (string banda in bandasRegistradas.Keys)
+    {
+        Console.WriteLine($"Banda {banda}");
+    }
+    Console.WriteLine("\nDigite uma tecla para voltar ao menu principal");
+    //aceita qualquer tecla
+    Console.ReadKey();
+    Console.Clear();
+    ExibirOpcoesMenu();
+}
+
+void ExibirTituloOpcoes(string titulo)
+{
+    int quantidadeLetras = titulo.Length;
+    string asteriscos = string.Empty.PadLeft(quantidadeLetras, '*');
+    Console.WriteLine(asteriscos);
+    Console.WriteLine(titulo);
+    Console.WriteLine(asteriscos + "\n");
+}
+
 ExibirOpcoesMenu();
+
+void AvaliarBanda()
+{
+    //digitar banda que deseja avaliar
+    //verificar se a banda existe
+    //se sim, atribuir uma nota
+    //se não, volta ao menu principal
+
+    Console.Clear();
+    ExibirTituloOpcoes("Avaliar banda");
+    Console.Write("Digite o nome da banda que deseja avaliar");
+    string nomeBanda = Console.ReadLine()!;
+    if (bandasRegistradas.ContainsKey(nomeBanda))
+    {
+        Console.Write($"Qual a nota que a banda {nomeBanda} merece? ");
+        int nota = int.Parse(Console.ReadLine()!);
+        //Adicionando a nota pra banda
+        bandasRegistradas[nomeBanda].Add(nota);
+        Console.WriteLine($"\nA nota {nota} foi registrada com sucesso para a banda {nomeBanda}");
+        Thread.Sleep(2000);
+        Console.Clear();
+
+    } else { Console.WriteLine($"A banda {nomeBanda} não está cadastrada");
+        Console.WriteLine("Digite uma tecla para voltar para o menu principal");
+        Console.ReadKey(); Console.Clear();
+        ExibirOpcoesMenu();
+    }
+}
