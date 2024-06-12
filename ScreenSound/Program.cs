@@ -67,6 +67,27 @@ void Exercicio02()
     //exibir a n - ésima posição de uma lista.
 }
 
+void Exercicio03()
+{
+    //A-) Criar um dicionário que represente um aluno, com uma lista de notas, e mostre a média de suas notas na tela.
+    var boletimAluno = new Dictionary<string, Dictionary<string, List<int>>>
+    {
+        {"Alicia", new Dictionary<string, List<int>> {
+            { "C#", new List<int>{10, 4, 5, 6, 7,}},
+            {"Python", new List<int>{1, 8, 9, 10, 11}}
+        } }
+    };
+
+    List<int> notasPythonAlicia = boletimAluno["Alicia"]["Python"];
+    double mediaAliciaEmPython = notasPythonAlicia.Average();
+    Console.WriteLine(mediaAliciaEmPython);
+
+    //B-) Criar um programa que gerencie o estoque de uma loja. Utilize um dicionário para armazenar produtos e suas quantidades em estoque e mostre, a
+    //partir do nome de um produto, sua quantidade em estoque.
+
+    //C-) Crie um programa que implemente um quiz simples de perguntas e respostas. Utilize um dicionário para armazenar as perguntas e as respostas corretas.
+    //D-) Criar um programa que simule um sistema de login utilizando um dicionário para armazenar nomes de usuário e senhas.
+}
 void ExibirOpcoesMenu()
 {
     ExibirMensagemBoasVindas();
@@ -161,6 +182,7 @@ void AvaliarBanda()
         Console.WriteLine($"\nA nota {nota} foi registrada com sucesso para a banda {nomeBanda}");
         Thread.Sleep(2000);
         Console.Clear();
+        ExibirOpcoesMenu();
 
     } else { Console.WriteLine($"A banda {nomeBanda} não está cadastrada");
         Console.WriteLine("Digite uma tecla para voltar para o menu principal");
