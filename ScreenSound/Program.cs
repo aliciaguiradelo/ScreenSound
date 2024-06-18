@@ -245,3 +245,22 @@ void MediaBanda()
 
 //instanciando um objeto do tipo Musica
 Musica musica1 = new Musica();
+//para que os atributos apareçam de forma simples precisa estar do tipo public na classe
+musica1.nome = "Pais e filhos";
+musica1.artista = "Renato Russo";
+musica1.duracao = 273;
+musica1.disponivel = true;
+
+//Exibindo
+//Console.WriteLine($"O nome da música é {musica1.nome} do artista {musica1.artista}");
+//Como eu criei um método comportamento para exibir essas informações basta usar esse método
+musica1.ExibirFichaTecnica();
+
+Musica musica2 = new Musica();
+musica2.nome = "Vertigo";
+musica2.artista = "U2";
+musica2.duracao = 149;
+musica2.disponivel = false;
+
+//Console.WriteLine($"O nome da música é {musica2.nome} do artista {musica2.artista}");
+musica2.ExibirFichaTecnica();
