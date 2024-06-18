@@ -73,7 +73,7 @@ void Exercicio03()
     var boletimAluno = new Dictionary<string, Dictionary<string, List<int>>>
     {
         {"Alicia", new Dictionary<string, List<int>> {
-            { "C#", new List<int>{10, 4, 5, 6, 7,}},
+            { "C#", new List<int>{10, 4, 5, 6, 7}},
             {"Python", new List<int>{1, 8, 9, 10, 11}}
         } }
     };
@@ -84,9 +84,47 @@ void Exercicio03()
 
     //B-) Criar um programa que gerencie o estoque de uma loja. Utilize um dicionário para armazenar produtos e suas quantidades em estoque e mostre, a
     //partir do nome de um produto, sua quantidade em estoque.
+    Dictionary<string, int> estoqueVans = new Dictionary<string, int>
+    {
+        {"Tennis Old School", 1000 },
+        {"Blusa Vans verde", 500},
+        {"Mochila Xadrês", 300 }
+    };
+    Console.WriteLine("Digite o nome de um produto para consultar ");
+    string produto = Console.ReadLine()!;
 
-    //C-) Crie um programa que implemente um quiz simples de perguntas e respostas. Utilize um dicionário para armazenar as perguntas e as respostas corretas.
+    if (estoqueVans.ContainsKey(produto)) {
+        Console.WriteLine($"A quantidade do produto {produto} no estoque é: {estoqueVans[produto]} ");
+    } else
+    {
+        Console.WriteLine("Esse produto ainda não está cadastrado no estoque");
+    }
+
+    //C-) Crie um programa que implemente um quiz simples de perguntas e respostas. Utilize um dicionário para armazenar as perguntas e as respostas
+    //corretas.
+    Dictionary<string, string> colecaoQuiz = new Dictionary<string, string>();
+    Console.Write("Digite a pergunta ");
+    string perguntaQuiz = Console.ReadLine()!;
+    Console.Write("Digite a resposta ");
+    string resposta = Console.ReadLine()!;
+    colecaoQuiz.Add(perguntaQuiz, resposta);
+
+    foreach (string pergunta in colecaoQuiz.Keys)
+    {
+        Console.WriteLine($"Pergunta {pergunta}, resposta {colecaoQuiz[pergunta]}");
+    }
+
+
     //D-) Criar um programa que simule um sistema de login utilizando um dicionário para armazenar nomes de usuário e senhas.
+    Dictionary<string, string> usuarios = new Dictionary<string, string>();
+    Console.Write("Digite o nome do seu usuário ");
+    string nomeUser = Console.ReadLine()!;
+    Console.Write("Digite a senha ");
+    string senhaUser = Console.ReadLine()!;
+    colecaoQuiz.Add(nomeUser, senhaUser);
+
+    Console.WriteLine($"Usuário {nomeUser} registrado com sucesso");
+    
 }
 void ExibirOpcoesMenu()
 {
@@ -107,7 +145,7 @@ void ExibirOpcoesMenu()
             break;
         case 3: AvaliarBanda();
             break;
-        case 4: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+        case 4: MediaBanda();
             break;
         case 5: Console.WriteLine("Fim!");
             break;
@@ -188,5 +226,19 @@ void AvaliarBanda()
         Console.WriteLine("Digite uma tecla para voltar para o menu principal");
         Console.ReadKey(); Console.Clear();
         ExibirOpcoesMenu();
+    }
+}
+
+void MediaBanda()
+{
+    Console.Clear();
+    ExibirTituloOpcoes("Ver média da banda");
+    Console.Write("Digite o nome da banda que deseja ver a média");
+    string nomeDaBanda = Console.ReadLine()!;
+    if (bandasRegistradas.ContainsKey(nomeDaBanda))
+    {
+        List<int> notas = bandasRegistradas[nomeDaBanda];
+        double mediaBanda = notas.Average();
+        Console.Write($"A média é {mediaBanda}");
     }
 }
