@@ -242,3 +242,6 @@ void MediaBanda()
         Console.Write($"A média é {mediaBanda}");
     }
 }
+
+//instanciando um objeto do tipo Musica
+Musica musica1 = new Musica();
